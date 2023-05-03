@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Action.cs" />
+    <Compile Remove="FINClass.cs" />
+    <Compile Remove="FINDefinitions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.HostIntegration.LogicApps.Si3270" Version="1.0.2069.19" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="SixLabors.Fonts" Version="1.0.0-beta19" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
+    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta15" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.HostIntegration.RecordAndPlan.SessionControl">
+      <HintPath>..\..\..\..\Program Files\Microsoft Host Integration Server - 3270 Design Tool\Microsoft.HostIntegration.RecordAndPlan.SessionControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

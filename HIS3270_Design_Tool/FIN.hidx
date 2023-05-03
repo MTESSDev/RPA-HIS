@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Library Name="ScreenScraping3270" HelpString="Library Description" HostLanguage="System z COBOL" UUID="5CF69CD9-EE48-4F8A-9FF8-7E7ED4251ED2" MajorVersion="1" MinorVersion="0" HasLegacyErrors="false" ComponentBuilderVersion="11.00.2609">
+  <CustomProperty Name="TMEClass" Value="{B70A902F-0CAD-4A97-B48B-487B8FB3B7BB}" />
+  <CustomProperty Name="CodeGeneration" Value="4" />
+  <CustomProperty Name="InterfaceNamingConvention" Value="2" />
+  <CustomProperty Name="IntendedUse" Value="0" />
+  <CustomProperty Name="DotNET" Value="True" />
+  <CustomProperty Name="Server" Value="0" />
+  <CustomProperty Name="CurrencySymbol" Value="$" />
+  <Interface Name="IActions" MajorVersion="1" MinorVersion="0" UUID="76B71513-F5F7-4962-81A5-5546A86B6AD9">
+    <Method Name="Login" ContextType="None" HelpString="">
+      <MetaData HelpString="" DispID="1" />
+    </Method>
+    <Method Name="Retour" ContextType="None" HelpString="">
+      <MetaData HelpString="" DispID="2" />
+    </Method>
+    <Method Name="Fermer" ContextType="None" HelpString="">
+      <MetaData HelpString="" DispID="3" />
+    </Method>
+  </Interface>
+  <InstanceData>
+    <Screens>
+      <Screen Name="AS16131Screen" Length="3440" >
+        <RecognitionFields>
+          <RecognitionField RecognitionText="SF1613" Row="2" Column="75" Not="false" AllowNulls="false"/>
+        </RecognitionFields>
+      </Screen>
+      <Screen Name="CICSLOGONScreen" Length="3440" >
+        <RecognitionFields>
+          <RecognitionField RecognitionText="CICS SIGN-ON" Row="1" Column="26" Not="false" AllowNulls="false"/>
+        </RecognitionFields>
+      </Screen>
+      <Screen Name="EmptyScreen" Length="1920" >
+      </Screen>
+      <Screen Name="HomeScreen" Length="1920" >
+        <RecognitionFields>
+          <RecognitionField RecognitionText="CA TPX Gestionnaire de Sessions" Row="1" Column="26" Not="false" AllowNulls="false"/>
+        </RecognitionFields>
+      </Screen>
+      <Screen Name="SIGNScreen" Length="3440" >
+        <RecognitionFields>
+          <RecognitionField RecognitionText="SIGN" Row="1" Column="2" Not="false" AllowNulls="false"/>
+          <RecognitionField RecognitionText="UTD1162" Row="2" Column="74" Not="false" AllowNulls="false"/>
+        </RecognitionFields>
+      </Screen>
+      <Screen Name="TerminalScreen" Length="3440" >
+        <RecognitionFields>
+          <RecognitionField RecognitionText="Terminal:" Row="1" Column="2" Not="false" AllowNulls="false"/>
+        </RecognitionFields>
+      </Screen>
+      <Screen Name="TSSScreen" Length="3440" >
+        <RecognitionFields>
+          <RecognitionField RecognitionText="SIG0045I  SIGN-ON EST COMPLETE" Row="43" Column="2" Not="false" AllowNulls="false"/>
+        </RecognitionFields>
+      </Screen>
+      <Screen Name="UT_3Screen" Length="3440" >
+        <RecognitionFields>
+          <RecognitionField RecognitionText="DC900010" Row="41" Column="2" Not="false" AllowNulls="false"/>
+        </RecognitionFields>
+      </Screen>
+    </Screens>
+    <FixedTexts>
+      <FixedText Name="FixedText_1" >
+        <TextActions>
+        </TextActions>
+      </FixedText>
+      <FixedText Name="FixedText_2" >
+        <TextActions>
+          <TextAction Row="43" Column="12" />
+        </TextActions>
+      </FixedText>
+      <FixedText Name="FixedText_3" >
+        <TextActions>
+          <TextAction Row="1" Column="1" />
+          <TextAction FixedText="sign" />
+        </TextActions>
+      </FixedText>
+      <FixedText Name="FixedText_4" >
+        <TextActions>
+          <TextAction Row="21" Column="28" />
+        </TextActions>
+      </FixedText>
+      <FixedText Name="FixedText_5" >
+        <TextActions>
+          <TextAction FixedText="ASAS,OPT=AMB" />
+        </TextActions>
+      </FixedText>
+      <FixedText Name="FixedText_6" >
+        <TextActions>
+          <TextAction FixedText="CESF LOGO" />
+        </TextActions>
+      </FixedText>
+    </FixedTexts>
+    <PlanScreens>
+      <PlanScreen Name="AsasAmbPlan_CICSLOGONScreen_1" Screen="CICSLOGONScreen" AidKey="Enter" FixedTextId="FixedText_1" />
+      <PlanScreen Name="AsasAmbPlan_EmptyScreen_1" Screen="EmptyScreen" />
+      <PlanScreen Name="AsasAmbPlan_EmptyScreen_2" Screen="EmptyScreen" AidKey="Enter" FixedTextId="FixedText_3" />
+      <PlanScreen Name="AsasAmbPlan_HomeScreen_1" Screen="HomeScreen" AidKey="Enter" FixedTextId="FixedText_4" />
+      <PlanScreen Name="AsasAmbPlan_SIGNScreen_1" Screen="SIGNScreen" AidKey="Enter" FixedTextId="FixedText_1" />
+      <PlanScreen Name="AsasAmbPlan_TerminalScreen_1" Screen="TerminalScreen" AidKey="Enter" FixedTextId="FixedText_2" />
+      <PlanScreen Name="AsasAmbPlan_TSSScreen_1" Screen="TSSScreen" AidKey="Clear" FixedTextId="FixedText_1" />
+      <PlanScreen Name="AsasOptAmbPlan_AS16131Screen_1" Screen="AS16131Screen" AidKey="PF12" FixedTextId="FixedText_1" />
+      <PlanScreen Name="AsasOptAmbPlan_AS16131Screen_2" Screen="AS16131Screen" AidKey="Enter" FixedTextId="FixedText_1" />
+      <PlanScreen Name="AsasOptAmbPlan_EmptyScreen_1" Screen="EmptyScreen" />
+      <PlanScreen Name="AsasOptAmbPlan_EmptyScreen_2" Screen="EmptyScreen" AidKey="Enter" FixedTextId="FixedText_5" />
+      <PlanScreen Name="AsasOptAmbPlan_UT_3Screen_1" Screen="UT_3Screen" AidKey="Clear" FixedTextId="FixedText_1" />
+      <PlanScreen Name="FermerPlan_EmptyScreen_1" Screen="EmptyScreen" AidKey="Clear" FixedTextId="FixedText_1" />
+      <PlanScreen Name="FermerPlan_EmptyScreen_2" Screen="EmptyScreen" />
+    </PlanScreens>
+    <Plans>
+      <Plan Name="AsasAmbPlan" Type="Process">
+        <PlanScreens>
+          <PlanScreen Name="AsasAmbPlan_CICSLOGONScreen_1" />
+          <PlanScreen Name="AsasAmbPlan_TerminalScreen_1" />
+          <PlanScreen Name="AsasAmbPlan_EmptyScreen_1" />
+          <PlanScreen Name="AsasAmbPlan_TSSScreen_1" />
+          <PlanScreen Name="AsasAmbPlan_SIGNScreen_1" />
+          <PlanScreen Name="AsasAmbPlan_EmptyScreen_2" />
+          <PlanScreen Name="AsasAmbPlan_HomeScreen_1" />
+        </PlanScreens>
+        <Flows>
+          <Flow From="AsasAmbPlan_CICSLOGONScreen_1" To="AsasAmbPlan_TSSScreen_1" />
+          <Flow From="AsasAmbPlan_TerminalScreen_1" To="AsasAmbPlan_SIGNScreen_1" />
+          <Flow From="AsasAmbPlan_TerminalScreen_1" To="AsasAmbPlan_EmptyScreen_2" />
+          <Flow From="AsasAmbPlan_TSSScreen_1" To="AsasAmbPlan_EmptyScreen_1" />
+          <Flow From="AsasAmbPlan_SIGNScreen_1" To="AsasAmbPlan_CICSLOGONScreen_1" />
+          <Flow From="AsasAmbPlan_EmptyScreen_2" To="AsasAmbPlan_CICSLOGONScreen_1" />
+          <Flow From="AsasAmbPlan_HomeScreen_1" To="AsasAmbPlan_TerminalScreen_1" />
+        </Flows>
+      </Plan>
+      <Plan Name="AsasOptAmbPlan" Type="Process">
+        <PlanScreens>
+          <PlanScreen Name="AsasOptAmbPlan_AS16131Screen_1" />
+          <PlanScreen Name="AsasOptAmbPlan_EmptyScreen_1" />
+          <PlanScreen Name="AsasOptAmbPlan_AS16131Screen_2" />
+          <PlanScreen Name="AsasOptAmbPlan_EmptyScreen_2" />
+          <PlanScreen Name="AsasOptAmbPlan_UT_3Screen_1" />
+        </PlanScreens>
+        <Flows>
+          <Flow From="AsasOptAmbPlan_AS16131Screen_1" To="AsasOptAmbPlan_UT_3Screen_1" />
+          <Flow From="AsasOptAmbPlan_AS16131Screen_2" To="AsasOptAmbPlan_AS16131Screen_1" />
+          <Flow From="AsasOptAmbPlan_EmptyScreen_2" To="AsasOptAmbPlan_AS16131Screen_2" />
+          <Flow From="AsasOptAmbPlan_UT_3Screen_1" To="AsasOptAmbPlan_EmptyScreen_1" />
+        </Flows>
+      </Plan>
+      <Plan Name="FermerPlan" Type="Process">
+        <PlanScreens>
+          <PlanScreen Name="FermerPlan_EmptyScreen_1" />
+          <PlanScreen Name="FermerPlan_EmptyScreen_2" />
+        </PlanScreens>
+        <Flows>
+          <Flow From="FermerPlan_EmptyScreen_1" To="FermerPlan_EmptyScreen_2" />
+        </Flows>
+      </Plan>
+    </Plans>
+    <Actions>
+      <Action Name="FermerAction" Plan="FermerPlan">
+        <Parameters>
+        </Parameters>
+        <Swagger>{"InputParameters":null,"OutputParameters":null}</Swagger>
+      </Action>
+      <Action Name="LoginAction" Plan="AsasAmbPlan">
+        <Parameters>
+          <Parameter Name="utilisateur" Type="String" Direction="In" PlanScreen="AsasAmbPlan_HomeScreen_1" Row="19" Column="25" Length="7" ParameterNumber="0" />
+          <Parameter Name="motdepasse" Type="String" Direction="In" PlanScreen="AsasAmbPlan_HomeScreen_1" Row="20" Column="25" Length="8" ParameterNumber="1" />
+          <Parameter Name="environnement" Type="String" Direction="In" PlanScreen="AsasAmbPlan_TerminalScreen_1" Row="43" Column="12" Length="23" ParameterNumber="2" />
+          <Parameter Name="utilisateur2" Type="String" Direction="In" PlanScreen="AsasAmbPlan_CICSLOGONScreen_1" Row="4" Column="11" Length="20" ParameterNumber="3" />
+          <Parameter Name="motdepasse2" Type="String" Direction="In" PlanScreen="AsasAmbPlan_CICSLOGONScreen_1" Row="6" Column="16" Length="8" ParameterNumber="4" />
+        </Parameters>
+        <Swagger>{"InputParameters":{"type":"object","properties":{"utilisateur":{"type":"string"},"motdepasse":{"type":"string"},"environnement":{"type":"string"},"utilisateur2":{"type":"string"},"motdepasse2":{"type":"string"}}},"OutputParameters":null}</Swagger>
+      </Action>
+      <Action Name="RetourAction" Plan="AsasOptAmbPlan">
+        <Parameters>
+          <Parameter Name="CP12In" Type="String" Direction="In" PlanScreen="AsasOptAmbPlan_AS16131Screen_2" Row="3" Column="34" Length="46" PartialRow="3" PartialColumn="35" PartialLength="12" ParameterNumber="0" />
+          <Parameter Name="beneficiaire" Type="String" Direction="In" PlanScreen="AsasOptAmbPlan_AS16131Screen_2" Row="13" Column="25" Length="1" ParameterNumber="1" />
+          <Parameter Name="cp12enfant" Type="String" Direction="In" PlanScreen="AsasOptAmbPlan_AS16131Screen_2" Row="13" Column="43" Length="12" ParameterNumber="2" />
+          <Parameter Name="annee" Type="String" Direction="In" PlanScreen="AsasOptAmbPlan_AS16131Screen_2" Row="24" Column="13" Length="2" ParameterNumber="3" />
+          <Parameter Name="mois" Type="String" Direction="In" PlanScreen="AsasOptAmbPlan_AS16131Screen_2" Row="24" Column="16" Length="2" ParameterNumber="4" />
+          <Parameter Name="jour" Type="String" Direction="In" PlanScreen="AsasOptAmbPlan_AS16131Screen_2" Row="24" Column="19" Length="2" ParameterNumber="5" />
+          <Parameter Name="noFacture" Type="String" Direction="In" PlanScreen="AsasOptAmbPlan_AS16131Screen_2" Row="24" Column="42" Length="10" ParameterNumber="6" />
+          <Parameter Name="montantFacture" Type="String" Direction="In" PlanScreen="AsasOptAmbPlan_AS16131Screen_2" Row="24" Column="71" Length="9" ParameterNumber="7" />
+          <Parameter Name="codeRetour" Type="String" Direction="Out" PlanScreen="AsasOptAmbPlan_UT_3Screen_1" Row="41" Column="1" Length="8" ParameterNumber="8" />
+          <Parameter Name="msgRetour" Type="String" Direction="Out" PlanScreen="AsasOptAmbPlan_UT_3Screen_1" Row="41" Column="10" Length="70" ParameterNumber="9" />
+        </Parameters>
+        <Swagger>{"InputParameters":{"type":"object","properties":{"CP12In":{"type":"string"},"beneficiaire":{"type":"string"},"cp12enfant":{"type":"string"},"annee":{"type":"string"},"mois":{"type":"string"},"jour":{"type":"string"},"noFacture":{"type":"string"},"montantFacture":{"type":"string"}}},"OutputParameters":{"type":"object","properties":{"codeRetour":{"type":"string"},"msgRetour":{"type":"string"}}}}</Swagger>
+      </Action>
+    </Actions>
+  </InstanceData>
+</Library>

@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Central</h1>
+    <p>
+
+        <form>
+
+        @foreach (var item in Model.nav.ParameterDefinitions)
+        {
+            @if (item.Direction == Microsoft.HostIntegration.SNA.Session.NavigationParameterDirection.In
+                    || item.Direction == Microsoft.HostIntegration.SNA.Session.NavigationParameterDirection.InOut)
+            {
+                <label>@item.Name</label>
+                <input id="@item.FullName" name="@item.Name" />
+                <br />
+            }
+        }
+        <button name="soumis" value="oui">Appeler central</button>
+        </form>
+    </p>
+</div>
