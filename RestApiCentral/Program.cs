@@ -33,7 +33,7 @@ app.MapPost("/ajouterFactureAmbulance", (string cp12,
     try
     {
         SessionDisplay sessionDisplay = default!;
-        string connectionString = "TRANSPORT=TN3270;IMPLEMENTATION=MANAGEDTN3270;NUMERICOVERRIDEBEHAVIOR=ENABLED;INVALIDCHARACTERSUPPORT=ALLOW;TN3270SERVER=cics-prod-sw.mes.reseau.intra;TN3270PORT=23;HOSTCODEPAGE=37;DEVICETYPE=IBM-3279-4";
+        string connectionString = "TRANSPORT=TN3270;IMPLEMENTATION=MANAGEDTN3270;NUMERICOVERRIDEBEHAVIOR=ENABLED;INVALIDCHARACTERSUPPORT=ALLOW;TN3270SERVER=cics-**-sw.mes.reseau.intra;TN3270PORT=23;HOSTCODEPAGE=37;DEVICETYPE=IBM-3279-4";
         NavigationPlanScreen lastPlanScreen = default!;
         NavigationProgressHandler progressHandler;
         int timeout = 5000;
